@@ -10,3 +10,12 @@ go:
 
 script:
   - make tool
+
+deploy:
+  provider: releases
+  api_key:
+    secure: "CAhMWzPlL1QKY6ru5dXvMg5Jgpm83ueKLot5RxUZVUb+vyoU3SFsMxXhrvU+EUksiEoazdkIei5bvieZCJu1b339Z1AMTXIdWaHE6IQDlVNh6Gvd8ywJYp/SEU45lFkONlRIpsx18ZwV6Fz81C5sf35kZr0kUkeCazndZ2M6YpIK3HHA1qa8N7tz3VC9cXHtmX64WzDQS+asccXUfkNQKEusKjNvJXqfx977944tvQj8un8SmDoFHMPOc2P+QObOstRJ1ros3rIDTGLDlIjywWiyKUh9kns95HSwkXnpHVP8P9vCNePBATvudK+NxXlFXVn0asYuKggb7ISdOlX6s9uTnDkSPMHxbn6M1iZ3WfRTLKrs8eG+L/k5iwdgclkWIQeVVFc43jDdXQMZBakoyD0SnmZXONTDYlAPoSTIuyIro4bBtcz/RKmRJDqx+jTQArJ2MMwzNgouL/N/IKCgT69ZnqOHjIxrX7odhjQtNgZewJChHnq42dmF6l9JBc4Q3jq2fdukPZRHxqmnWrP8Kywt/VZ9RIDNPhrbQN4ICx8TpD2I9oXY92034O3oZHn/mJ7i50yig2BJQNFN/bwaDJU26duyjuOy7geqeYcnvY2HwsvUqo0MsG/aL59+pOTwGB5O7Eqz+yErh6Y5O6veUA55fMytnuS6XDAt4Mp1Hb0="
+  file: tools/bin/ovirt-containers-tool
+  skip_cleanup: true
+  on:
+    tags: true
