@@ -36,7 +36,7 @@ GLIDE_BINARY=$(ROOT)/bin/glide
 GLIDE_PROJECT=$(shell find tools/src -name glide.yaml -print -quit)
 
 # Location of the generated tool:
-TOOL_BINARY=$(ROOT)/bin/ovc
+TOOL_BINARY=$(ROOT)/bin/ovirt-containers-tool
 
 # Install Glide if necessary:
 $(GLIDE_BINARY):
