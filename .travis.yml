@@ -1,12 +1,17 @@
 sudo: required
-
 language: go
-
 services:
-  - docker
-
+- docker
 go:
-  - 1.8
-
+- 1.8
 script:
-  - make tool
+- make tool
+deploy:
+  provider: releases
+  api_key:
+    secure: XbV6lxplMgJFHOrI/sMLWxJ0xzOswotDVPb5Go3BLN22nomX1HJxmfIrO1PtLow5Lh0NrcWk+rspGzuFX2PxkelzQVGXlwxKx8Lxs9IJ/vcblxe21SrSejwUnQ3tB+w6fbR1GY8OGWRfrcXWD7yOCvtKT4aY3fKYplNoS+f92O+hfvgZh6N/T3FEAds24L9JU29P9+w7MAOmR9EsnAVHww7d/FP49V5ABHVdQu5IE0PtOEgEXetN4WWt3Sr5a24SFvVGs2+glDTjT1A2TYdTVSIJ8EWLhQNQkPtv1xUXs9hiwUI1MixJ7UpE66SMsbAXOvXs5+mNsxi0sBY8H+PH0N66e0tIgusSp9k/B2WZUaUXj6ktePkqV23wlKbkTnyHZS7AhIbjxYO63fritoXtY3u6Y3xmHdI8F8jotl60DynpGWAncK8c62nBhyGWu4YLqBN3ynvTFNlvABO8CmHI+Uw35on81YFLbypOzvF7M8vmmsZeQB01KQf0cI5IlTmQqIzLLQ2Y9HM8S/YyucobxnBlY+mV4VrbvT9N3ymw+7wXXx6xQh0rRhLk/tB0vMaGq8BUF+SQeVf/or1K4sGkAklEo5GEViBqjr8NuLWQ5CljzKgxpKNKXoVodr8DLGQbXDdJB+lsWi7WeLq8ynQmthBTE8H8qBInAbkY9mYJ/gU=
+  file: tools/bin/ovirt-containers-tool
+  skip_cleanup: true
+  on:
+    repo: jhernand/ovirt-containers
+    tags: true
